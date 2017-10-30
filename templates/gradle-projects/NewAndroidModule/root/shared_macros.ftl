@@ -68,5 +68,18 @@ android {
         }
     }
 </#if>
+
+<#if useDataBinding!false>
+    dataBinding {
+        enabled = true
+    }
+</#if>
+<#if generateKotlin>
+<#if useDataBinding!false>
+    kapt {
+        generateStubs = true
+    }
+</#if>
+</#if>
 }
 </#macro>

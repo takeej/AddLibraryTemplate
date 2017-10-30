@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<#if useDataBinding!false>
+<layout>
+</#if>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,10 +14,10 @@
 </#if>
     tools:context="${packageName}.${activityClass}">
 
-<#if isNewProject!false>
+
     <TextView
-<#if includeCppSupport!false>
-        android:id="@+id/sample_text"
+<#if useDataBinding!false>
+        android:id="@+id/message"
 </#if>
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,5 +27,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</#if>
+
 </android.support.constraint.ConstraintLayout>
+<#if useDataBinding!false>
+</layout>
+</#if>

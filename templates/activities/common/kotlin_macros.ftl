@@ -6,13 +6,18 @@ an app build.gradle -->
 <#compress>
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+<#if useDataBinding!false>
+apply plugin: 'kotlin-kapt'
+</#if>
 </#compress>
 </#if>
 </#macro>
 
 <#macro addKotlinDependencies>
 <#if generateKotlin>${getConfigurationName("compile")} "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"</#if>
+<#if generateKotlin><#if useDataBinding!false>${getConfigurationName("kapt")} "com.android.databinding:compiler:2.3.3"</#if></#if>
 </#macro>
+
 
 // TODO: <apply plugin /> Is adding the dependencies at the *end* of build.gradle
 // TODO: The two macros above, addKotlinPlugins and addKotlinDependencies, are duplicating the work of addAllKotlinDependencies, when
