@@ -1,0 +1,2 @@
+# AddLibraryTemplate
+Android Project Template
