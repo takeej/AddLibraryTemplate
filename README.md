@@ -2,6 +2,7 @@
 Android Project Template
 
 안드로이드 스튜디오(3.0)에 아래 내용을 선택할 수 있는 프로젝트를 추가하였습니다. 
+
 	- Dagger2 ( Android ) 
 	- Data Binding
 
